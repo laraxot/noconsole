@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 806837a (.)
 <?php 
 //https://github.com/CurosMJ/NoConsoleComposer
 include 'password.php';
@@ -152,6 +155,7 @@ $base_path = \str_replace('\\', '\\\\', $base_path);
 			<div class="col-lg-1"></div>
 		</div>
 	</body>
+<<<<<<< HEAD
 =======
 <?php
 include 'password.php';
@@ -265,4 +269,6 @@ include 'password.php';
         </div>
     </body>
 >>>>>>> 33a6daa (.)
+=======
+>>>>>>> 806837a (.)
 </html>
