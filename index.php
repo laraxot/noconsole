@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 806837a (.)
+=======
+>>>>>>> 2b721eb (the first commit)
 <?php 
 //https://github.com/CurosMJ/NoConsoleComposer
 include 'password.php';
@@ -156,6 +159,7 @@ $base_path = \str_replace('\\', '\\\\', $base_path);
 		</div>
 	</body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <?php
 include 'password.php';
@@ -271,4 +275,6 @@ include 'password.php';
 >>>>>>> 33a6daa (.)
 =======
 >>>>>>> 806837a (.)
+=======
+>>>>>>> 2b721eb (the first commit)
 </html>
