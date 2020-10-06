@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -26,3 +27,13 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_PW'] !== $password)
 >>>>>>> 2b721eb (the first commit)
     exit;
 }
+=======
+<?php
+
+$password = 'password1234';
+if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_PW'] !== $password) {
+    \header('WWW-Authenticate: Basic realm="NoConsoleComposer"');
+    \header('HTTP/1.0 401 Unauthorized');
+    exit;
+}
+>>>>>>> 49e960a (.)
