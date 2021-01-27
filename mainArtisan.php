@@ -19,8 +19,15 @@ if (! \function_exists($_POST['function'])) {
 }
 
 function command() {
-    require_once ROOT_DIR.'/vendor/autoload.php';
-    $app = require_once ROOT_DIR.'/bootstrap/app.php';
+    $root_dir = '../../laravel';
+    if (! file_exists($root_dir.'/vendor/autoload.php')) {
+        $root_dir = '../..';
+        if (! file_exists($root_dir.'/vendor/autoload.php')) {
+            dd('error '.__LINE__.' '.__FILE__);
+        }
+    }
+    require_once $root_dir.'/vendor/autoload.php';
+    $app = require_once $root_dir.'/bootstrap/app.php';
     $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 
     $vars = [$_POST['command']];
