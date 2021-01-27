@@ -5,6 +5,8 @@ declare(strict_types=1);
 \define('ROOT_DIR', \realpath('../../laravel'));
 \set_time_limit(10000);
 \ini_set('memory_limit', '-1');  //could be forbidden on server
+\ini_set('display_errors', '1');  //could be forbidden on server
+error_reporting(E_ALL);
 
 include 'password.php';
 if (! isset($_POST['function'])) {
