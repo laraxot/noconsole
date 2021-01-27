@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    checkComposer();
+    //checkComposer();
 });
 
 function urlComposer() {
