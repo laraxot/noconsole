@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -32,8 +33,19 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_PW'] !== $password)
 
 $password = 'password1234';
 if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_PW'] !== $password) {
+=======
+<?php
+
+declare(strict_types=1);
+
+$password = 'password1234';
+if (! isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_PW'] !== $password) {
+>>>>>>> 8b75065 (.)
     \header('WWW-Authenticate: Basic realm="NoConsoleComposer"');
     \header('HTTP/1.0 401 Unauthorized');
     exit;
 }
+<<<<<<< HEAD
 >>>>>>> 49e960a (.)
+=======
+>>>>>>> 8b75065 (.)
