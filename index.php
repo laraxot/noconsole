@@ -565,8 +565,8 @@ $artisan_cmds = ['route:list', 'view:clear'];
                     <input type="text" class="bower form-input" name="cmd">
                     <button onclick="callArtisan('exe')" class="bower btn btn-info disabled">Exe</button>
                     -->
-                    <button onclick="callArtisan('route:list')" class="bower btn btn-info disabled">route:list</button>
-                    <button onclick="callArtisan('view:clear')" class="bower btn btn-info disabled">view:clear</button>
+                    <button onclick="callArtisan('route:list')" class="bower btn btn-info">route:list</button>
+                    <button onclick="callArtisan('view:clear')" class="bower btn btn-info">view:clear</button>
 
 >>>>>>> 79a6b79 (.)
                 </fieldset>
