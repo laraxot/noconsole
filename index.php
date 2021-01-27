@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 806837a (.)
 =======
@@ -494,10 +495,18 @@ $base_path = \str_replace('\\', '\\\\', $base_path);
 >>>>>>> 3e9282f (.)
 =======
 <?php
+=======
+<?php
+declare(strict_types=1);
+>>>>>>> 79a6b79 (.)
 //https://github.com/CurosMJ/NoConsoleComposer
 include 'password.php';
 $base_path = \realpath('../../laravel');
 $base_path = \str_replace('\\', '\\\\', $base_path);
+<<<<<<< HEAD
+=======
+$artisan_cmds = ['route:list', 'view:clear'];
+>>>>>>> 79a6b79 (.)
 ?>
 <!DOCTYPE html>
 <html>
@@ -545,11 +554,21 @@ $base_path = \str_replace('\\', '\\\\', $base_path);
                 <hr />
                 <fieldset>
                     <legend>Artisan Commands</legend>
+<<<<<<< HEAD
                     <input type="text" class="bower form-input" name="cmd">
                     <button onclick="callArtisan('exe')" class="bower btn btn-info disabled">Exe</button>
                     <button onclick="callArtisan('remove')" class="bower btn btn-info disabled">remove</button>
                     <button onclick="callArtisan('update')" class="bower btn btn-info disabled">update</button>
                     <button onclick="callArtisan('list')" class="bower btn btn-info disabled">show</button>
+=======
+                    <!--
+                    <input type="text" class="bower form-input" name="cmd">
+                    <button onclick="callArtisan('exe')" class="bower btn btn-info disabled">Exe</button>
+                    -->
+                    <button onclick="callArtisan('route:list')" class="bower btn btn-info disabled">route:list</button>
+                    <button onclick="callArtisan('view:clear')" class="bower btn btn-info disabled">view:clear</button>
+
+>>>>>>> 79a6b79 (.)
                 </fieldset>
             </div>
             <h3>Console Output:</h3>
@@ -560,4 +579,7 @@ $base_path = \str_replace('\\', '\\\\', $base_path);
 </body>
 
 </html>
+<<<<<<< HEAD
 >>>>>>> 3a8d2b8 (.)
+=======
+>>>>>>> 79a6b79 (.)
