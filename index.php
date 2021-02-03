@@ -498,14 +498,13 @@ $base_path = \str_replace('\\', '\\\\', $base_path);
 =======
 <?php
 /**
- * https://github.com/CurosMJ/NoConsoleComposer
+ * https://github.com/CurosMJ/NoConsoleComposer.
  */
 declare(strict_types=1);
 <<<<<<< HEAD
 >>>>>>> 79a6b79 (.)
 //https://github.com/CurosMJ/NoConsoleComposer
 =======
-
 
 require_once 'DotEnv.php';
 (new DotEnv(__DIR__.'/.env'))->load();
@@ -515,9 +514,22 @@ include 'password.php';
 $base_path = \realpath('../../laravel');
 $base_path = \str_replace('\\', '\\\\', $base_path);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 $artisan_cmds = ['route:list', 'view:clear'];
 >>>>>>> 79a6b79 (.)
+=======
+
+$cmds = [
+    //'NoConsole' => ['check'],
+    'Composer' => ['require', 'remove', 'install', 'update', 'dump-autoload',
+        'show', 'check', 'geoip:update',
+        //'getStatus',//is a function not a command
+    ],
+    'Bower' => ['install', 'remove', 'update', 'list'],
+    'Artisan' => ['route:list', 'view:clear', 'migrate'],
+];
+>>>>>>> e03e7a1 (.)
 ?>
 <!DOCTYPE html>
 <html>
@@ -533,8 +545,13 @@ $artisan_cmds = ['route:list', 'view:clear'];
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<<<<<<< HEAD
     <script type="text/javascript" src="js/script.js<?php echo '?rnd='.rand(1, 100); ?>"></script>
 >>>>>>> b10f238 (.)
+=======
+    <script type="text/javascript" src="js/script.js<?php echo '?rnd='.rand(1, 100); ?>">
+    </script>
+>>>>>>> e03e7a1 (.)
     <link href="css/style.css" media="all" rel="stylesheet" />
 </head>
 
