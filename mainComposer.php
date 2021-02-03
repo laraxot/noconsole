@@ -185,8 +185,7 @@ if (! \function_exists($_POST['function'])) {
 
 require_once 'common.php';
 
-function getStatus()
-{
+function getStatus() {
     $output = [
         'composer' => \file_exists(ROOT_DIR.'/composer.phar'),
         'composer_extracted' => \file_exists(EXTRACT_DIRECTORY),
@@ -196,8 +195,7 @@ function getStatus()
     echo \json_encode($output);
 }
 
-function downloadComposer()
-{
+function downloadComposer() {
     $installerURL = 'https://getcomposer.org/installer';
     $installerFile = 'installer.php';
     if (! \file_exists($installerFile)) {
@@ -223,28 +221,41 @@ function downloadComposer()
     \flush();
 }
 
-function extractComposer()
-{
+function extractComposer() {
+    //echo 'check  .'.ROOT_DIR.'/vendor/autoload.php'.PHP_EOL;
+
+    if (! file_exists(ROOT_DIR.'/vendor/autoload.php')) {
+        echo 'Wrong LARAVEL DIR fix .env file'.PHP_EOL;
+        echo ''.ROOT_DIR.'/vendor/autoload.php not exists '.PHP_EOL;
+
+        exit(1);
+    }
     if (\file_exists(ROOT_DIR.'/composer.phar')) {
         echo 'Extracting composer.phar ...'.PHP_EOL;
         \flush();
         $composer = new Phar(ROOT_DIR.'/composer.phar');
-        $composer->extractTo(EXTRACT_DIRECTORY);
-        echo 'Extraction complete.'.PHP_EOL;
+        try {
+            $composer->extractTo(EXTRACT_DIRECTORY);
+            echo 'Extraction complete.'.PHP_EOL;
+        } catch (\Exception $e) {
+            $msg = $e->getMessage();
+            $msg = str_replace('failed: ', 'failed: '.PHP_EOL, $msg);
+            $msg = str_replace(' to ', PHP_EOL.' to ', $msg);
+
+            echo $msg;
+        }
     } else {
         echo ROOT_DIR.'/composer.phar does not exist';
         rename('./composer.phar', ROOT_DIR.'/composer.phar');
     }
 }
 
-function command()
-{
+function command() {
     //command_string();
     command_array();
 }
 
-function command_string()
-{
+function command_string() {
     //$_POST['command']='require laravel/scout';
     \set_time_limit(-1);
     \putenv('COMPOSER_HOME='.HOME_DIRECTORY);
@@ -266,8 +277,7 @@ function command_string()
     }
 }
 
-function command_array()
-{
+function command_array() {
     $args = [];
     /*
     $args['command'] = 'require';
