@@ -538,6 +538,7 @@ $artisan_cmds = ['route:list', 'view:clear'];
             <h1>NoConsole</h1>
             <hr />
             <div class="form-inline">
+<<<<<<< HEAD
                 <fieldset>
                     <legend>Composer Commands</legend>
                     <button onclick="del()" class="composer btn btn-success disabled">Self Update</button>
@@ -578,6 +579,24 @@ $artisan_cmds = ['route:list', 'view:clear'];
                     -->
                     <button onclick="callArtisan('route:list')" class="bower btn btn-info">route:list</button>
                     <button onclick="callArtisan('view:clear')" class="bower btn btn-info">view:clear</button>
+=======
+                <button onclick="check()">check</button>
+                <button onclick="downloadComposer()">downloadComposer</button>
+                <button onclick="extractComposer()">extractComposer</button>
+                <?php
+                    $html = '';
+                    foreach ($cmds as $pack => $pack_cmds) {
+                        $html .= '<fieldset>
+                    <legend>'.$pack.' Commands</legend>
+                    <input type="text" class="form-input" name="package" id="'.strtolower($pack).'_text">&nbsp;';
+                        foreach ($pack_cmds as $cmd) {
+                            $html .= '<button onclick="callPack(\''.$cmd.'\',\''.$pack.'\')" class="btn btn-success">'.$cmd.'</button>&nbsp;';
+                        }
+                        $html .= '</fieldset>';
+                    }
+                    echo $html;
+                ?>
+>>>>>>> c457f98 (.)
 
 >>>>>>> 79a6b79 (.)
                 </fieldset>

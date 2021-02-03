@@ -26,6 +26,108 @@ function callPack(func, pack) {
 }
 
 
+<<<<<<< HEAD
+=======
+function extractComposer() {
+    $("#output").append('\nLoading extractComposer...\n');
+    $.ajax({
+        url: urlComposer(),
+        type: 'post',
+        //dataType: 'json',
+        data: {
+            "function": "extractComposer"
+        }
+    }).done(function(data, textStatus, jqXHR) {
+        $("#output").append(data);
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+        console.log('--- fail ---');
+        console.log('jqXHR');
+        console.log(jqXHR);
+        console.log('textStatus');
+        console.log(textStatus);
+        console.log('errorThrown');
+        console.log(errorThrown);
+    }).always(function(jqXHROrData, textStatus, jqXHROrErrorThrown) {
+        //console.log(data);
+        console.log("complete");
+    });
+
+}
+
+function downloadComposer() {
+    $("#output").append('\nLoading downloadComposer...\n');
+    $.ajax({
+        url: urlComposer(),
+        type: 'post',
+        //dataType: 'json',
+        data: {
+            "function": "downloadComposer"
+        }
+    }).done(function(data, textStatus, jqXHR) {
+        $("#output").append(data);
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+        console.log('--- fail ---');
+        console.log('jqXHR');
+        console.log(jqXHR);
+        console.log('textStatus');
+        console.log(textStatus);
+        console.log('errorThrown');
+        console.log(errorThrown);
+    }).always(function(jqXHROrData, textStatus, jqXHROrErrorThrown) {
+        //console.log(data);
+        console.log("complete");
+    });
+
+}
+
+function check() {
+    $("#output").append('\nLoading...\n');
+    $.ajax({
+        url: urlComposer(),
+        type: 'post',
+        dataType: 'json',
+        data: {
+            "function": "getStatus"
+        }
+    }).done(function(data, textStatus, jqXHR) {
+        if (data.composer_extracted) {
+            $("#output").html("Ready. All commands are available.\n");
+            $("button.composer").removeClass('disabled');
+            $("button.bower").removeClass('disabled');
+        } else if (data.composer) {
+            $("#output").html("Please extractComposer \n");
+            /*
+            $.post(urlComposer(), {
+                    "password": $("#password").val(),
+                    "function": "extractComposer",
+                },
+                function(data) {
+                    $("#output").append(data);
+                    window.location.reload();
+                }, 'text');
+                */
+        } else {
+            $("#output").html("Please downloadComposer \n");
+            /*
+            $.post(urlComposer(), {
+                    "password": $("#password").val(),
+                    "function": "downloadComposer",
+                },
+                function(data) {
+                    $("#output").append(data);
+                    check();
+                }, 'text');
+            */
+        }
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+        console.log('--- fail ---');
+        console.log('jqXHR');
+        console.log(jqXHR);
+        console.log('textStatus');
+        console.log(textStatus);
+        console.log('errorThrown');
+        console.log(errorThrown);
+>>>>>>> c457f98 (.)
 
 function callComposer(func) {
     callPack(func, 'Composer');
