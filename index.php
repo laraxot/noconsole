@@ -497,9 +497,20 @@ $base_path = \str_replace('\\', '\\\\', $base_path);
 <?php
 =======
 <?php
+/**
+ * https://github.com/CurosMJ/NoConsoleComposer
+ */
 declare(strict_types=1);
+<<<<<<< HEAD
 >>>>>>> 79a6b79 (.)
 //https://github.com/CurosMJ/NoConsoleComposer
+=======
+
+
+require_once 'DotEnv.php';
+(new DotEnv(__DIR__.'/.env'))->load();
+
+>>>>>>> 36ca29c (.)
 include 'password.php';
 $base_path = \realpath('../../laravel');
 $base_path = \str_replace('\\', '\\\\', $base_path);
