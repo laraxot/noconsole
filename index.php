@@ -527,7 +527,7 @@ $cmds = [
         //'getStatus',//is a function not a command
     ],
     'Bower' => ['install', 'remove', 'update', 'list'],
-    'Artisan' => ['route:list', 'view:clear', 'migrate'],
+    'Artisan' => ['route:list', 'view:clear', 'migrate', 'route:cache', 'vendor:publish','db:seed'],
 ];
 >>>>>>> e03e7a1 (.)
 ?>
