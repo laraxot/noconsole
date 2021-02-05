@@ -527,10 +527,11 @@ $cmds = [
         //'getStatus',//is a function not a command
     ],
     'Bower' => ['install', 'remove', 'update', 'list'],
-    'Artisan' => ['route:list',
+    'Artisan' => ['exe', 'route:list',
         'route:clear', 'view:clear', 'optimize:clear', 'cache:clear',
         'config:cache', 'config:clear',
-        'migrate', 'route:cache', 'vendor:publish', 'db:seed',
+        'migrate', 'migrate --seed',
+        'route:cache', 'vendor:publish', 'db:seed',
     ],
 ];
 >>>>>>> e03e7a1 (.)
@@ -621,7 +622,7 @@ $cmds = [
                     foreach ($cmds as $pack => $pack_cmds) {
                         $html .= '<fieldset>
                     <legend>'.$pack.' Commands</legend>
-                    <input type="text" class="form-input" name="package" id="'.strtolower($pack).'_text">&nbsp;';
+                    <input type="text" class="form-input" name="package" id="'.$pack.'_text" style="width:100%">&nbsp;<br/>';
                         foreach ($pack_cmds as $cmd) {
                             $html .= '<button onclick="callPack(\''.$cmd.'\',\''.$pack.'\')" class="btn btn-success">'.$cmd.'</button>&nbsp;';
                         }

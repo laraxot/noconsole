@@ -1,5 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+=======
+declare(strict_types=1);
+/*
+>>>>>>> ac87cf8 (.)
 declare(strict_types=1);
 
 \define('ROOT_DIR', \realpath('../../laravel'));
@@ -30,8 +35,14 @@ function command() {
     $app = require_once $root_dir.'/bootstrap/app.php';
     $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 
-    $vars = [$_POST['command']];
-    $input = new Symfony\Component\Console\Input\ArrayInput($vars);
+    //$vars = [$_POST['command']];
+    //$input = new Symfony\Component\Console\Input\ArrayInput($vars);
+
+    $command = $_POST['command'];
+    if (isset($_POST['package']) && \mb_strlen(\trim($_POST['package'])) > 3 && 'exe' == $command) {
+        $command = $_POST['package'];
+    }
+    $input = new Symfony\Component\Console\Input\StringInput($command);
     //$output = new Symfony\Component\Console\Output\ConsoleOutput();
     $output = new Symfony\Component\Console\Output\StreamOutput(\tmpfile());
     $status = $kernel->handle($input, $output);
