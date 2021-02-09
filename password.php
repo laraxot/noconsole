@@ -67,4 +67,7 @@ if (! isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_PW'] !== $password)
     \header('HTTP/1.0 401 Unauthorized');
     exit;
 }
+<<<<<<< HEAD
 >>>>>>> a19dbeb (.)
+=======
+>>>>>>> 6c13d61 (.)
