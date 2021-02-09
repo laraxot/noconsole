@@ -533,6 +533,7 @@ $cmds = [
         'config:cache',
         'migrate',
         'route:cache', 'vendor:publish',
+        'storage:link',
     ],
 ];
 >>>>>>> e03e7a1 (.)
