@@ -1,8 +1,12 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 1da66e5 (first)
 declare(strict_types=1);
 /*
 >>>>>>> ac87cf8 (.)
@@ -45,6 +49,9 @@ function command() {
     $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1da66e5 (first)
     //$vars = [$_POST['command']];
     //$input = new Symfony\Component\Console\Input\ArrayInput($vars);
 
@@ -53,10 +60,13 @@ function command() {
         $command = $_POST['package'];
     }
     $input = new Symfony\Component\Console\Input\StringInput($command);
+<<<<<<< HEAD
 =======
     $vars = [$_POST['command']];
     $input = new Symfony\Component\Console\Input\ArrayInput($vars);
 >>>>>>> a19dbeb (.)
+=======
+>>>>>>> 1da66e5 (first)
     //$output = new Symfony\Component\Console\Output\ConsoleOutput();
     $output = new Symfony\Component\Console\Output\StreamOutput(\tmpfile());
     $status = $kernel->handle($input, $output);
@@ -73,7 +83,11 @@ function command() {
     echo 'status:[<pre>'.print_r($status, true).'</pre>]';
     exit($status);
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> a19dbeb (.)
+=======
+}
+>>>>>>> 1da66e5 (first)

@@ -540,18 +540,25 @@ $cmds = [
     ],
     'Bower' => ['install', 'remove', 'update', 'list'],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1da66e5 (first)
     'Artisan' => ['exe',
         'route:list',
         'route:clear', 'view:clear', 'optimize:clear', 'cache:clear', 'config:clear',
         'config:cache',
         'migrate',
         'route:cache', 'vendor:publish',
+<<<<<<< HEAD
         'storage:link',
     ],
 ];
 >>>>>>> e03e7a1 (.)
 =======
     'Artisan' => ['route:list', 'view:clear', 'migrate'],
+=======
+    ],
+>>>>>>> 1da66e5 (first)
 ];
 >>>>>>> a19dbeb (.)
 ?>
@@ -586,7 +593,8 @@ $cmds = [
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/script.js<?php echo '?rnd='.rand(1, 100); ?>">
+    <script type="text/javascript"
+        src="js/script.js<?php echo '?rnd='.rand(1, 100); ?>">
     </script>
 >>>>>>> a19dbeb (.)
     <link href="css/style.css" media="all" rel="stylesheet" />
@@ -653,10 +661,14 @@ $cmds = [
                         $html .= '<fieldset>
                     <legend>'.$pack.' Commands</legend>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <input type="text" class="form-input" name="package" id="'.$pack.'_text" style="width:100%">&nbsp;<br/>';
 =======
                     <input type="text" class="form-input" name="package" id="'.strtolower($pack).'_text">&nbsp;';
 >>>>>>> a19dbeb (.)
+=======
+                    <input type="text" class="form-input" name="package" id="'.$pack.'_text" style="width:100%">&nbsp;<br/>';
+>>>>>>> 1da66e5 (first)
                         foreach ($pack_cmds as $cmd) {
                             $html .= '<button onclick="callPack(\''.$cmd.'\',\''.$pack.'\')" class="btn btn-success">'.$cmd.'</button>&nbsp;';
                         }

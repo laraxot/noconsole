@@ -18,9 +18,12 @@ function callPack(command, pack) {
     $.post('main' + pack + '.php', {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "package": $("#packageComposer").val(),
             "command": func,
 =======
+=======
+>>>>>>> 1da66e5 (first)
             "package": $("#"+pack+"_text").val(),
             "command": command,
 >>>>>>> ac87cf8 (.)
