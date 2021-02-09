@@ -7,21 +7,22 @@ require_once LARAVEL_DIR.'/vendor/autoload.php';
 
 $path = LARAVEL_DIR.'/Modules';
 $handle = opendir($path);
-echo '<table class="table" border="1" width="100%">
+$html = '';
+$html .= '<table class="table table-bordered" border="1" width="100%">
 <tr>
 <td>';
-echo '<ul>';
+$html .= '<ul>';
 while (false !== ($entry = readdir($handle))) {
     if ('.' != $entry[0]) {
-        //echo '<pre>'.print_r($entry, true).is_dir($path.'/'.$entry).'</pre>';
-        echo '<li>'.$entry;
-        echo '<ul>';
+        //$html.='<pre>'.print_r($entry, true).is_dir($path.'/'.$entry).'</pre>';
+        $html .= '<li>'.$entry;
+        $html .= '<ul>';
         $path_tests = $path.'/'.$entry.'/Tests';
         $handle_tests = opendir($path_tests);
         while (false !== ($entry_test = readdir($handle_tests))) {
             if ('.' != $entry_test[0]) {
-                echo '<li>'.$entry_test;
-                echo '<ul>';
+                $html .= '<li>'.$entry_test;
+                $html .= '<ul>';
                 $path_file_tests = $path_tests.'/'.$entry_test;
                 $handle_file_tests = opendir($path_file_tests);
                 while (false !== ($entry_file_test = readdir($handle_file_tests))) {
@@ -29,8 +30,8 @@ while (false !== ($entry = readdir($handle))) {
                     $file_info = pathinfo($file);
                     $file_info['file'] = $file;
                     if ('php' == $file_info['extension']) {
-                        echo '<li>'.$entry_file_test;
-                        echo '<ul>';
+                        $html .= '<li>'.$entry_file_test;
+                        $html .= '<ul>';
                         $input = file_get_contents($file);
                         //die($input);
                         $pattern = '/function(.*?)[(]/';
@@ -39,46 +40,47 @@ while (false !== ($entry = readdir($handle))) {
                             $str = 'test';
                             $match = trim($match);
                             if (substr($match, 0, strlen($str)) == $str) {
-                                echo '<li>';
-                                //echo $match;
-                                echo '<form method="POST" action="">
+                                $html .= '<li>';
+                                //$html.=$match;
+                                $html .= '<form method="POST" action="">
                                     <input type="hidden" name="file" value="'.$file.'">
                                     <input type="hidden" name="func" value="'.$match.'">
-                                    <button type="submit">'.substr($match, strlen($str)).'</button>
+                                    <button type="submit" class="btn btn-info btn-xs">'.substr($match, strlen($str)).'</button>
                                 </form>';
-                                echo '</li>';
+                                $html .= '</li>';
                             }
                         }
-                        echo '</ul>';
-                        echo '</li>';
+                        $html .= '</ul>';
+                        $html .= '</li>';
                     }
                 }
-                echo '</ul>';
-                echo '</li>';
+                $html .= '</ul>';
+                $html .= '</li>';
             }
         }
-        echo '</ul>';
-        echo '</li>';
+        $html .= '</ul>';
+        $html .= '</li>';
     }
 }
-echo '</ul>';
-echo '</td>';
-echo '<td valign="top">';
+$html .= '</ul>';
+$html .= '</td>';
+$html .= '<td valign="top">';
 
-result();
-echo '</td>';
+$html .= result();
+$html .= '</td>';
 
-echo '</tr>';
-echo '</table>';
+$html .= '</tr>';
+$html .= '</table>';
 closedir($handle);
 
-function result() {
+function result(): string {
+    $html = '';
     if (! isset($_POST['file']) || ! isset($_POST['func'])) {
-        echo 'perform an action';
+        $html .= 'perform an action';
+
+        return $html;
     }
-    echo '<br/> file: '.$_POST['file'];
-    echo '<br/> function: '.$_POST['func'];
-    echo '<br/>';
+
     $argv = [
         $_POST['file'],
         '--filter', '^.*::'.$_POST['func'],
@@ -86,6 +88,35 @@ function result() {
     ];
 
     $_SERVER['argv'] = $argv;
+    ob_start();
 
     PHPUnit\TextUI\Command::main(false);
+    $html .= ob_get_contents();
+    ob_end_clean();
+    $html = nl2br($html);
+    $html = str_replace(', Memory:', '<br/>Memory:', $html);
+
+    $html .= '<br/> file: '.$_POST['file'];
+    $html .= '<br/> function: '.$_POST['func'];
+    $html .= '<br/>';
+
+    return $html;
 }
+?>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+    <?php
+    echo $html;
+?>
+</body>
+
+</html>
