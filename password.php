@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -55,3 +56,15 @@ if (! isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_PW'] !== $password)
 >>>>>>> 49e960a (.)
 =======
 >>>>>>> 8b75065 (.)
+=======
+<?php
+
+declare(strict_types=1);
+$password = 'admin123';
+//$password = getenv('pwd');
+if (! isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_PW'] !== $password) {
+    \header('WWW-Authenticate: Basic realm="NoConsoleComposer"');
+    \header('HTTP/1.0 401 Unauthorized');
+    exit;
+}
+>>>>>>> a19dbeb (.)

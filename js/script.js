@@ -6,12 +6,17 @@ function urlComposer() {
     return 'mainComposer.php';
 }
 
+<<<<<<< HEAD
 function callPack(func, pack) {
+=======
+function callPack(command, pack) {
+>>>>>>> a19dbeb (.)
     $("#output").append("\nplease wait...\n");
     $("#output").append("\n===================================================================\n");
     $("#output").append("Executing Started");
     $("#output").append("\n===================================================================\n");
     $.post('main' + pack + '.php', {
+<<<<<<< HEAD
 <<<<<<< HEAD
             "package": $("#packageComposer").val(),
             "command": func,
@@ -19,6 +24,10 @@ function callPack(func, pack) {
             "package": $("#"+pack+"_text").val(),
             "command": command,
 >>>>>>> ac87cf8 (.)
+=======
+            "package": $("#packageComposer").val(),
+            "command": command,
+>>>>>>> a19dbeb (.)
             "function": "command"
         },
         function(data) {
@@ -32,7 +41,10 @@ function callPack(func, pack) {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a19dbeb (.)
 function extractComposer() {
     $("#output").append('\nLoading extractComposer...\n');
     $.ajax({
@@ -132,6 +144,7 @@ function check() {
         console.log(textStatus);
         console.log('errorThrown');
         console.log(errorThrown);
+<<<<<<< HEAD
 >>>>>>> c457f98 (.)
 
 function callComposer(func) {
@@ -149,12 +162,27 @@ function callArtisan(func) {
 
 
 function checkComposer() {
+=======
+
+
+    }).always(function(jqXHROrData, textStatus, jqXHROrErrorThrown) {
+        //console.log(data);
+        console.log("complete");
+    });
+}
+
+function checkComposerOLD() {
+>>>>>>> a19dbeb (.)
     $("#output").append('\nloading...\n');
     $.post(urlComposer(), {
             "function": "getStatus",
             "password": $("#password").val()
         },
         function(data) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> a19dbeb (.)
             if (data.composer_extracted) {
                 $("#output").html("Ready. All commands are available.\n");
                 $("button.composer").removeClass('disabled');
@@ -180,4 +208,8 @@ function checkComposer() {
                     }, 'text');
             }
         });
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a19dbeb (.)

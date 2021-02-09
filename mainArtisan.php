@@ -1,10 +1,14 @@
 <?php
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
 declare(strict_types=1);
 /*
 >>>>>>> ac87cf8 (.)
+=======
+/*
+>>>>>>> a19dbeb (.)
 declare(strict_types=1);
 
 \define('ROOT_DIR', \realpath('../../laravel'));
@@ -22,6 +26,11 @@ if (! \function_exists($_POST['function'])) {
 } else {
     \call_user_func($_POST['function']);
 }
+<<<<<<< HEAD
+=======
+*/
+include 'common.php';
+>>>>>>> a19dbeb (.)
 
 function command() {
     $root_dir = '../../laravel';
@@ -35,6 +44,7 @@ function command() {
     $app = require_once $root_dir.'/bootstrap/app.php';
     $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 
+<<<<<<< HEAD
     //$vars = [$_POST['command']];
     //$input = new Symfony\Component\Console\Input\ArrayInput($vars);
 
@@ -43,6 +53,10 @@ function command() {
         $command = $_POST['package'];
     }
     $input = new Symfony\Component\Console\Input\StringInput($command);
+=======
+    $vars = [$_POST['command']];
+    $input = new Symfony\Component\Console\Input\ArrayInput($vars);
+>>>>>>> a19dbeb (.)
     //$output = new Symfony\Component\Console\Output\ConsoleOutput();
     $output = new Symfony\Component\Console\Output\StreamOutput(\tmpfile());
     $status = $kernel->handle($input, $output);
@@ -58,4 +72,8 @@ function command() {
 
     echo 'status:[<pre>'.print_r($status, true).'</pre>]';
     exit($status);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a19dbeb (.)

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 
 
@@ -161,6 +162,10 @@ $stream = fopen('php://temp', 'w+');
 
 declare(strict_types=1);
 
+=======
+<?php
+
+>>>>>>> a19dbeb (.)
 //https://odino.org/install-composer-dependencies-with-the-symfony2-cli/
 //https://stackoverflow.com/questions/25893664/how-to-use-composer-composer-php-classes-to-update-individual-packages
 
@@ -330,8 +335,12 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\HttpFoundation\Response;
 
 $stream = fopen('php://temp', 'w+');
+<<<<<<< HEAD
 */
 <<<<<<< HEAD
 >>>>>>> c457f98 (.)
 =======
 >>>>>>> ac87cf8 (.)
+=======
+*/
+>>>>>>> a19dbeb (.)
