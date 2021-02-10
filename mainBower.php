@@ -1,15 +1,8 @@
 <?php
 
-<<<<<<< HEAD
-
-//https://odino.org/install-composer-dependencies-with-the-symfony2-cli/
-//https://stackoverflow.com/questions/25893664/how-to-use-composer-composer-php-classes-to-update-individual-packages
-
-=======
 //https://odino.org/install-composer-dependencies-with-the-symfony2-cli/
 //https://stackoverflow.com/questions/25893664/how-to-use-composer-composer-php-classes-to-update-individual-packages
 /*
->>>>>>> a19dbeb (.)
 \define('ROOT_DIR', \realpath('../../laravel'));
 \define('EXTRACT_DIRECTORY', ROOT_DIR.'/composer'); // /storage/composer
 \define('HOME_DIRECTORY', ROOT_DIR.'/composer/home');
@@ -28,16 +21,10 @@ if (!\function_exists($_POST['function'])) {
 } else {
     \call_user_func($_POST['function']);
 }
-<<<<<<< HEAD
-
-function getStatus()
-{
-=======
 */
 require_once 'common.php';
 
 function getStatus() {
->>>>>>> a19dbeb (.)
     $output = [
         'composer' => \file_exists(ROOT_DIR.'/composer.phar'),
         'composer_extracted' => \file_exists(EXTRACT_DIRECTORY),
@@ -47,18 +34,10 @@ function getStatus() {
     echo \json_encode($output);
 }
 
-<<<<<<< HEAD
-function downloadComposer()
-{
-    $installerURL = 'https://getcomposer.org/installer';
-    $installerFile = 'installer.php';
-    if (!\file_exists($installerFile)) {
-=======
 function downloadComposer() {
     $installerURL = 'https://getcomposer.org/installer';
     $installerFile = 'installer.php';
     if (! \file_exists($installerFile)) {
->>>>>>> a19dbeb (.)
         echo 'Downloading '.$installerURL.PHP_EOL;
         \flush();
         $ch = \curl_init($installerURL);
@@ -81,12 +60,7 @@ function downloadComposer() {
     \flush();
 }
 
-<<<<<<< HEAD
-function extractComposer()
-{
-=======
 function extractComposer() {
->>>>>>> a19dbeb (.)
     if (\file_exists(ROOT_DIR.'/composer.phar')) {
         echo 'Extracting composer.phar ...'.PHP_EOL;
         \flush();
@@ -98,32 +72,18 @@ function extractComposer() {
     }
 }
 
-<<<<<<< HEAD
-function command()
-{
-=======
 function command() {
->>>>>>> a19dbeb (.)
     //command_string();
     command_array();
 }
 
-<<<<<<< HEAD
-function command_string()
-{
-=======
 function command_string() {
->>>>>>> a19dbeb (.)
     //$_POST['command']='require laravel/scout';
     \set_time_limit(-1);
     \putenv('COMPOSER_HOME='.HOME_DIRECTORY);
     $path = ROOT_DIR;
     $path = \str_replace('\\', '\\\\', $path);
-<<<<<<< HEAD
-    if (!\file_exists($path)) {
-=======
     if (! \file_exists($path)) {
->>>>>>> a19dbeb (.)
         echo 'Invalid Path';
         die();
     }
@@ -139,12 +99,7 @@ function command_string() {
     }
 }
 
-<<<<<<< HEAD
-function command_array()
-{
-=======
 function command_array() {
->>>>>>> a19dbeb (.)
     $args = [];
     /*
     $args['command'] = 'require';
@@ -186,8 +141,4 @@ function command_array() {
     echo '<pre>['.\chr(13);
     \print_r($content);
     echo \chr(13).']</pre>';
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a19dbeb (.)

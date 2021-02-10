@@ -6,31 +6,14 @@ function urlComposer() {
     return 'mainComposer.php';
 }
 
-<<<<<<< HEAD
-function callPack(func, pack) {
-=======
 function callPack(command, pack) {
->>>>>>> a19dbeb (.)
     $("#output").append("\nplease wait...\n");
     $("#output").append("\n===================================================================\n");
     $("#output").append("Executing Started");
     $("#output").append("\n===================================================================\n");
     $.post('main' + pack + '.php', {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "package": $("#packageComposer").val(),
-            "command": func,
-=======
-=======
->>>>>>> 1da66e5 (first)
             "package": $("#"+pack+"_text").val(),
             "command": command,
->>>>>>> ac87cf8 (.)
-=======
-            "package": $("#packageComposer").val(),
-            "command": command,
->>>>>>> a19dbeb (.)
             "function": "command"
         },
         function(data) {
@@ -43,11 +26,6 @@ function callPack(command, pack) {
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a19dbeb (.)
 function extractComposer() {
     $("#output").append('\nLoading extractComposer...\n');
     $.ajax({
@@ -147,25 +125,6 @@ function check() {
         console.log(textStatus);
         console.log('errorThrown');
         console.log(errorThrown);
-<<<<<<< HEAD
->>>>>>> c457f98 (.)
-
-function callComposer(func) {
-    callPack(func, 'Composer');
-}
-
-function callBower(func) {
-    callPack(func, 'Bower');
-}
-
-function callArtisan(func) {
-    callPack(func, 'Artisan');
-}
-
-
-
-function checkComposer() {
-=======
 
 
     }).always(function(jqXHROrData, textStatus, jqXHROrErrorThrown) {
@@ -175,17 +134,13 @@ function checkComposer() {
 }
 
 function checkComposerOLD() {
->>>>>>> a19dbeb (.)
     $("#output").append('\nloading...\n');
     $.post(urlComposer(), {
             "function": "getStatus",
             "password": $("#password").val()
         },
         function(data) {
-<<<<<<< HEAD
-=======
 
->>>>>>> a19dbeb (.)
             if (data.composer_extracted) {
                 $("#output").html("Ready. All commands are available.\n");
                 $("button.composer").removeClass('disabled');
@@ -211,8 +166,4 @@ function checkComposerOLD() {
                     }, 'text');
             }
         });
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a19dbeb (.)
