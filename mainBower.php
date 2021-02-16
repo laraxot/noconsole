@@ -1,9 +1,8 @@
 <?php
 
-
 //https://odino.org/install-composer-dependencies-with-the-symfony2-cli/
 //https://stackoverflow.com/questions/25893664/how-to-use-composer-composer-php-classes-to-update-individual-packages
-
+/*
 \define('ROOT_DIR', \realpath('../../laravel'));
 \define('EXTRACT_DIRECTORY', ROOT_DIR.'/composer'); // /storage/composer
 \define('HOME_DIRECTORY', ROOT_DIR.'/composer/home');
@@ -22,9 +21,10 @@ if (!\function_exists($_POST['function'])) {
 } else {
     \call_user_func($_POST['function']);
 }
+*/
+require_once 'common.php';
 
-function getStatus()
-{
+function getStatus() {
     $output = [
         'composer' => \file_exists(ROOT_DIR.'/composer.phar'),
         'composer_extracted' => \file_exists(EXTRACT_DIRECTORY),
@@ -34,11 +34,10 @@ function getStatus()
     echo \json_encode($output);
 }
 
-function downloadComposer()
-{
+function downloadComposer() {
     $installerURL = 'https://getcomposer.org/installer';
     $installerFile = 'installer.php';
-    if (!\file_exists($installerFile)) {
+    if (! \file_exists($installerFile)) {
         echo 'Downloading '.$installerURL.PHP_EOL;
         \flush();
         $ch = \curl_init($installerURL);
@@ -61,8 +60,7 @@ function downloadComposer()
     \flush();
 }
 
-function extractComposer()
-{
+function extractComposer() {
     if (\file_exists(ROOT_DIR.'/composer.phar')) {
         echo 'Extracting composer.phar ...'.PHP_EOL;
         \flush();
@@ -74,20 +72,18 @@ function extractComposer()
     }
 }
 
-function command()
-{
+function command() {
     //command_string();
     command_array();
 }
 
-function command_string()
-{
+function command_string() {
     //$_POST['command']='require laravel/scout';
     \set_time_limit(-1);
     \putenv('COMPOSER_HOME='.HOME_DIRECTORY);
     $path = ROOT_DIR;
     $path = \str_replace('\\', '\\\\', $path);
-    if (!\file_exists($path)) {
+    if (! \file_exists($path)) {
         echo 'Invalid Path';
         die();
     }
@@ -103,8 +99,7 @@ function command_string()
     }
 }
 
-function command_array()
-{
+function command_array() {
     $args = [];
     /*
     $args['command'] = 'require';

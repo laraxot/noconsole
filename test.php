@@ -3,8 +3,6 @@
 declare(strict_types=1);
 define('LARAVEL_DIR', realpath('../../laravel'));
 
-//echo 'ciao ['.LARAVEL_DIR.']';
-
 require_once LARAVEL_DIR.'/vendor/autoload.php';
 use PHPUnit\Framework\TestSuite;
 use PHPUnit\TextUI\TestRunner;

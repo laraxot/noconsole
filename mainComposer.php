@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
 
 //https://odino.org/install-composer-dependencies-with-the-symfony2-cli/
 //https://stackoverflow.com/questions/25893664/how-to-use-composer-composer-php-classes-to-update-individual-packages
 
+/*
 \define('ROOT_DIR', \realpath('../../laravel'));
 \define('EXTRACT_DIRECTORY', ROOT_DIR.'/composer'); // /storage/composer
 \define('HOME_DIRECTORY', ROOT_DIR.'/composer/home');
@@ -13,17 +15,20 @@
 \putenv('COMPOSER_HOME='.HOME_DIRECTORY);
 
 include 'password.php';
-if (!isset($_POST['function'])) {
+if (! isset($_POST['function'])) {
     die('You must specify a function');
 }
-if (!\function_exists($_POST['function'])) {
+if (! \function_exists($_POST['function'])) {
     die('Function not found');
 } else {
     \call_user_func($_POST['function']);
 }
 
-function getStatus()
-{
+//*/
+
+require_once 'common.php';
+
+function getStatus() {
     $output = [
         'composer' => \file_exists(ROOT_DIR.'/composer.phar'),
         'composer_extracted' => \file_exists(EXTRACT_DIRECTORY),
@@ -33,11 +38,10 @@ function getStatus()
     echo \json_encode($output);
 }
 
-function downloadComposer()
-{
+function downloadComposer() {
     $installerURL = 'https://getcomposer.org/installer';
     $installerFile = 'installer.php';
-    if (!\file_exists($installerFile)) {
+    if (! \file_exists($installerFile)) {
         echo 'Downloading '.$installerURL.PHP_EOL;
         \flush();
         $ch = \curl_init($installerURL);
@@ -60,33 +64,47 @@ function downloadComposer()
     \flush();
 }
 
-function extractComposer()
-{
+function extractComposer() {
+    //echo 'check  .'.ROOT_DIR.'/vendor/autoload.php'.PHP_EOL;
+
+    if (! file_exists(ROOT_DIR.'/vendor/autoload.php')) {
+        echo 'Wrong LARAVEL DIR fix .env file'.PHP_EOL;
+        echo ''.ROOT_DIR.'/vendor/autoload.php not exists '.PHP_EOL;
+
+        exit(1);
+    }
     if (\file_exists(ROOT_DIR.'/composer.phar')) {
         echo 'Extracting composer.phar ...'.PHP_EOL;
         \flush();
         $composer = new Phar(ROOT_DIR.'/composer.phar');
-        $composer->extractTo(EXTRACT_DIRECTORY);
-        echo 'Extraction complete.'.PHP_EOL;
+        try {
+            $composer->extractTo(EXTRACT_DIRECTORY);
+            echo 'Extraction complete.'.PHP_EOL;
+        } catch (\Exception $e) {
+            $msg = $e->getMessage();
+            $msg = str_replace('failed: ', 'failed: '.PHP_EOL, $msg);
+            $msg = str_replace(' to ', PHP_EOL.' to ', $msg);
+
+            echo $msg;
+        }
     } else {
         echo ROOT_DIR.'/composer.phar does not exist';
+        rename('./composer.phar', ROOT_DIR.'/composer.phar');
     }
 }
 
-function command()
-{
+function command() {
     //command_string();
     command_array();
 }
 
-function command_string()
-{
+function command_string() {
     //$_POST['command']='require laravel/scout';
     \set_time_limit(-1);
     \putenv('COMPOSER_HOME='.HOME_DIRECTORY);
     $path = ROOT_DIR;
     $path = \str_replace('\\', '\\\\', $path);
-    if (!\file_exists($path)) {
+    if (! \file_exists($path)) {
         echo 'Invalid Path';
         die();
     }
@@ -102,8 +120,7 @@ function command_string()
     }
 }
 
-function command_array()
-{
+function command_array() {
     $args = [];
     /*
     $args['command'] = 'require';
@@ -114,7 +131,7 @@ function command_array()
         //$args['command'] = 'require';
         $args['packages'] = [$_POST['package']];
     }
-    if (\in_array($args['command'], ['require', 'remove'], true) && !isset($args['packages'])) {
+    if (\in_array($args['command'], ['require', 'remove'], true) && ! isset($args['packages'])) {
         echo '<h3>Package is obligatory when command is require or remove </h3>';
         exit;
     }
