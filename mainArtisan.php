@@ -1,4 +1,9 @@
 <?php
+<<<<<<< HEAD
+=======
+
+declare(strict_types=1);
+>>>>>>> 365444b42b85de69708f7b85fbfca3809f789a1a
 /*
 declare(strict_types=1);
 
@@ -32,8 +37,19 @@ function command() {
     $app = require_once $root_dir.'/bootstrap/app.php';
     $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 
+<<<<<<< HEAD
     $vars = [$_POST['command']];
     $input = new Symfony\Component\Console\Input\ArrayInput($vars);
+=======
+    //$vars = [$_POST['command']];
+    //$input = new Symfony\Component\Console\Input\ArrayInput($vars);
+
+    $command = $_POST['command'];
+    if (isset($_POST['package']) && \mb_strlen(\trim($_POST['package'])) > 3 && 'exe' == $command) {
+        $command = $_POST['package'];
+    }
+    $input = new Symfony\Component\Console\Input\StringInput($command);
+>>>>>>> 365444b42b85de69708f7b85fbfca3809f789a1a
     //$output = new Symfony\Component\Console\Output\ConsoleOutput();
     $output = new Symfony\Component\Console\Output\StreamOutput(\tmpfile());
     $status = $kernel->handle($input, $output);
@@ -49,4 +65,8 @@ function command() {
 
     echo 'status:[<pre>'.print_r($status, true).'</pre>]';
     exit($status);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 365444b42b85de69708f7b85fbfca3809f789a1a
