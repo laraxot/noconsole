@@ -12,11 +12,7 @@ function callPack(command, pack) {
     $("#output").append("Executing Started");
     $("#output").append("\n===================================================================\n");
     $.post('main' + pack + '.php', {
-<<<<<<< HEAD
-            "package": $("#packageComposer").val(),
-=======
             "package": $("#"+pack+"_text").val(),
->>>>>>> 365444b42b85de69708f7b85fbfca3809f789a1a
             "command": command,
             "function": "command"
         },

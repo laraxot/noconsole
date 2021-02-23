@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #output{
     width:100%;
     height:650px;
@@ -14,21 +13,4 @@ fieldset {
     padding-left: 0.75em;
     padding-right: 0.75em;
     border: 1px groove lightgray;
-=======
-#output{
-    width:100%;
-    height:650px;
-    overflow-y:scroll;
-    overflow-x:hidden;
-} 
-fieldset { 
-    display: block;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-top: 0.35em;
-    padding-bottom: 0.625em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    border: 1px groove lightgray;
->>>>>>> 365444b42b85de69708f7b85fbfca3809f789a1a
 }
