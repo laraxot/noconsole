@@ -1,15 +1,26 @@
 <?php
 /**
  * https://github.com/CurosMJ/NoConsoleComposer.
+ * ---
  */
 declare(strict_types=1);
-
+error_reporting(E_ALL);
+ini_set('display_errors','true');
 require_once 'DotEnv.php';
 (new DotEnv(__DIR__.'/.env'))->load();
 
+
 include 'password.php';
-$base_path = \realpath('../../laravel');
-$base_path = \str_replace('\\', '\\\\', $base_path);
+
+
+//die('['.__LINE__.']['.getenv('LARAVEL_DIR').']['.$_ENV['LARAVEL_DIR'].']');
+
+//$base_path = realpath('../../laravel');
+$base_path=realpath(getenv('LARAVEL_DIR'));
+
+$base_path = str_replace('\\', '\\\\', $base_path);
+
+
 
 $cmds = [
     //'NoConsole' => ['check'],
