@@ -6,3 +6,83 @@ Stack trace:
 #2 /home/txaesfry/manager.quaerisofficina.it/public_html/noconsole/mainEnv.php(5): include('/home/txaesfry/...')
 #3 {main}
   thrown in /home/txaesfry/manager.quaerisofficina.it/public_html/noconsole/mainEnv.php on line 21
+[27-Jan-2023 11:24:11 UTC] PHP Warning:  scandir(../..//storage/logs): Failed to open directory: No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:11 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:11 UTC] PHP Fatal error:  Uncaught TypeError: array_diff(): Argument #1 ($array) must be of type array, bool given in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php:53
+Stack trace:
+#0 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(53): array_diff()
+#1 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(14): getLogs()
+#2 /home/txaesfry/subdomains/dev01/public_html/noconsole/common.php(27): command()
+#3 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(5): include('/home/txaesfry/...')
+#4 {main}
+  thrown in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:28 UTC] PHP Warning:  scandir(../..//storage/logs): Failed to open directory: No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:28 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:28 UTC] PHP Fatal error:  Uncaught TypeError: array_diff(): Argument #1 ($array) must be of type array, bool given in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php:53
+Stack trace:
+#0 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(53): array_diff()
+#1 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(14): getLogs()
+#2 /home/txaesfry/subdomains/dev01/public_html/noconsole/common.php(27): command()
+#3 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(5): include('/home/txaesfry/...')
+#4 {main}
+  thrown in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:30 UTC] PHP Warning:  scandir(../..//storage/logs): Failed to open directory: No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:30 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:30 UTC] PHP Fatal error:  Uncaught TypeError: array_diff(): Argument #1 ($array) must be of type array, bool given in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php:53
+Stack trace:
+#0 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(53): array_diff()
+#1 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(14): getLogs()
+#2 /home/txaesfry/subdomains/dev01/public_html/noconsole/common.php(27): command()
+#3 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(5): include('/home/txaesfry/...')
+#4 {main}
+  thrown in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:30 UTC] PHP Warning:  scandir(../..//storage/logs): Failed to open directory: No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:30 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:30 UTC] PHP Fatal error:  Uncaught TypeError: array_diff(): Argument #1 ($array) must be of type array, bool given in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php:53
+Stack trace:
+#0 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(53): array_diff()
+#1 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(14): getLogs()
+#2 /home/txaesfry/subdomains/dev01/public_html/noconsole/common.php(27): command()
+#3 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(5): include('/home/txaesfry/...')
+#4 {main}
+  thrown in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:31 UTC] PHP Warning:  scandir(../..//storage/logs): Failed to open directory: No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:31 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:31 UTC] PHP Fatal error:  Uncaught TypeError: array_diff(): Argument #1 ($array) must be of type array, bool given in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php:53
+Stack trace:
+#0 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(53): array_diff()
+#1 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(14): getLogs()
+#2 /home/txaesfry/subdomains/dev01/public_html/noconsole/common.php(27): command()
+#3 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(5): include('/home/txaesfry/...')
+#4 {main}
+  thrown in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:31 UTC] PHP Warning:  scandir(../..//storage/logs): Failed to open directory: No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:31 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:31 UTC] PHP Fatal error:  Uncaught TypeError: array_diff(): Argument #1 ($array) must be of type array, bool given in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php:53
+Stack trace:
+#0 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(53): array_diff()
+#1 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(14): getLogs()
+#2 /home/txaesfry/subdomains/dev01/public_html/noconsole/common.php(27): command()
+#3 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(5): include('/home/txaesfry/...')
+#4 {main}
+  thrown in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:32 UTC] PHP Warning:  scandir(../..//storage/logs): Failed to open directory: No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:32 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:32 UTC] PHP Fatal error:  Uncaught TypeError: array_diff(): Argument #1 ($array) must be of type array, bool given in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php:53
+Stack trace:
+#0 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(53): array_diff()
+#1 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(14): getLogs()
+#2 /home/txaesfry/subdomains/dev01/public_html/noconsole/common.php(27): command()
+#3 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(5): include('/home/txaesfry/...')
+#4 {main}
+  thrown in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:32 UTC] PHP Warning:  scandir(../..//storage/logs): Failed to open directory: No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:32 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
+[27-Jan-2023 11:24:32 UTC] PHP Fatal error:  Uncaught TypeError: array_diff(): Argument #1 ($array) must be of type array, bool given in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php:53
+Stack trace:
+#0 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(53): array_diff()
+#1 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(14): getLogs()
+#2 /home/txaesfry/subdomains/dev01/public_html/noconsole/common.php(27): command()
+#3 /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php(5): include('/home/txaesfry/...')
+#4 {main}
+  thrown in /home/txaesfry/subdomains/dev01/public_html/noconsole/mainLog.php on line 53
