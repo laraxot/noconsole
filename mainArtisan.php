@@ -35,8 +35,8 @@ function command() {
             ],true));
         }
     }
-    require_once $root_dir.'/vendor/autoload.php';
-    $app = require_once $root_dir.'/bootstrap/app.php';
+    require_once ROOT_DIR.'/vendor/autoload.php';
+    $app = require_once ROOT_DIR.'/bootstrap/app.php';
     $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 
     //$vars = [$_POST['command']];
