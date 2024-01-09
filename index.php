@@ -16,7 +16,7 @@ include 'password.php';
 //die('['.__LINE__.']['.getenv('LARAVEL_DIR').']['.$_ENV['LARAVEL_DIR'].']');
 
 //$base_path = realpath('../../laravel');
-$base_path=realpath(getenv('LARAVEL_DIR'));
+$base_path=realpath(__DIR__.'/'.getenv('LARAVEL_DIR'));
 
 die(print_r([
     'env'=>getenv('LARAVEL_DIR'),
