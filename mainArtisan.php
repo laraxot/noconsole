@@ -24,10 +24,15 @@ include 'common.php';
 
 function command() {
     $root_dir = '../../laravel';
-    if (! file_exists($root_dir.'/vendor/autoload.php')) {
+    if (! file_exists(ROOT_DIR.'/vendor/autoload.php')) {
         $root_dir = '../..';
-        if (! file_exists($root_dir.'/vendor/autoload.php')) {
-            dd('error '.__LINE__.' '.__FILE__);
+        if (! file_exists(ROOT_DIR.'/vendor/autoload.php')) {
+            die(print_r([
+                'error '=>'file not exists',
+                'file'=>ROOT_DIR.'/vendor/autoload.php',
+                'line'=> __LINE__,
+                'file'=>__FILE__,
+            ],true));
         }
     }
     require_once $root_dir.'/vendor/autoload.php';
