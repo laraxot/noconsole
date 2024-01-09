@@ -5,7 +5,7 @@ require_once 'DotEnv.php';
 (new DotEnv(__DIR__.'/.env'))->load();
 
 //\define('ROOT_DIR', \realpath('../../laravel'));
-\define('ROOT_DIR', \realpath(getenv('LARAVEL_DIR')));
+\define('ROOT_DIR', realpath(__DIR__.'/'.getenv('LARAVEL_DIR')));
 \define('EXTRACT_DIRECTORY', ROOT_DIR.'/composer'); // /storage/composer
 \define('HOME_DIRECTORY', ROOT_DIR.'/composer/home');
 \define('COMPOSER_INSTALLED', \file_exists(ROOT_DIR.'/vendor'));
