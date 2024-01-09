@@ -18,7 +18,12 @@ include 'password.php';
 //$base_path = realpath('../../laravel');
 $base_path=realpath(getenv('LARAVEL_DIR'));
 
-die($base_path);
+die(print_r([
+    'env'=>getenv('LARAVEL_DIR'),
+    'dir'=>__DIR__,
+    'base_path'=>$base_path
+    ]
+,true));
 
 $base_path = str_replace('\\', '\\\\', $base_path);
 
