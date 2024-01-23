@@ -22,8 +22,7 @@ if (! \function_exists($_POST['function'])) {
 */
 include 'common.php';
 
-function command()
-{
+function command() {
     $root_dir = '../../laravel';
     if (! file_exists(ROOT_DIR.'/vendor/autoload.php')) {
         $root_dir = '../..';
