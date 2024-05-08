@@ -1,2 +1,3 @@
 *.phar
 /.env
+.git-blame-ignore-revs
